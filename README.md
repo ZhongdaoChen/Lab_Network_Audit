@@ -1,5 +1,3 @@
-# Lab_Network_Audit
-
 The Lab Check is to see if there is any abnormal rules especially in the perimeter firewalls that allows lab vlans reach outside world without any limitation or let traffic from internet have access to the lab network without limitation. 
 
 About the Python script:
