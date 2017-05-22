@@ -27,6 +27,7 @@ def set_zero():
 def ip2num(ip):
     ip=[int(x) for x in ip.split('.')]
     return ip[0] <<24 | ip[1]<<16 | ip[2]<<8 |ip[3]
+
 def num2ip(num):
     return '%s.%s.%s.%s' %( (num & 0xff000000) >>24,
                             (num & 0x00ff0000) >>16,
@@ -75,8 +76,11 @@ def extract_related_rules(ip,file):
             set_value()
             n = 0
     workbook.save("./Ingress ACL From all firewalls/ACL_from_"+file +".xls")
+
 fp_ips = open('./all_lab_ips.txt','w')
 ACL_file = ["PA-5050", "1sum-7010a","1sum-asa5585-1","7cc-4500x", "7cc-5540a", "7cc-6509", "50ib-7010a", "320c-6513"]
+
+def extract_Network_IP():
 for file in ACL_file:
     set_zero()
     bk = xlrd.open_workbook(file + ".xlsx")
@@ -101,4 +105,7 @@ for file in ACL_file:
                 fp_ips.write(str(line))
                 fp_ips.write('\n')
                 extract_related_rules(str(line),file)
-fp_ips.close()
+    fp_ips.close()
+
+extract_Network_IP()
+ 
