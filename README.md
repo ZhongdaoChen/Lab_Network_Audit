@@ -1,6 +1,7 @@
 The Lab Check is to see if there is any abnormal rules especially in the perimeter firewalls that allows lab vlans reach outside world without any limitation or let traffic from internet have access to the lab network without limitation. 
 
 About the Python script 
+
 #This script is used for extracting all rules related to Lab VLANs from the firewall ACL.
 
 #This script is used for extracting all rules related to Lab VLANs from the ACL
