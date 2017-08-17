@@ -40,7 +40,7 @@ def get_ip(ip):
 def extract_related_rules(ip,file):
     n = 0
     for i in range(0,sh.nrows):
-        temp_line = sh.cell_value(i, 14)    #context. For source address, 12. For destination address, 14
+        temp_line = sh.cell_value(i, 14)    # Read the content from sheet file. For source address, colomn 12. For destination address, 14
         ip_index = sh.cell_value(i, 14).find(ip)    #index
         if(ip_index>=0 and len(temp_line)==len(ip)+ip_index):
             for j in range(12,19):
